@@ -239,6 +239,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Auth.cshtml" />
     <Content Include="Views\Home\Admin.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
