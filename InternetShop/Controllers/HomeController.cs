@@ -9,8 +9,12 @@ namespace InternetShop.Controllers
     public class HomeController : Controller
     {
         private Models.ShopEntities db = new Models.ShopEntities();
+        private bool auth = false;
         public ActionResult Index()
         {
+            var cookie = new HttpCookie("auth");
+            cookie.Expires = DateTime.Now.AddDays(-1);
+            Response.Cookies.Add(cookie);
             var Item = new Models.Good()
             {
                 Count = 3,
@@ -33,25 +37,38 @@ namespace InternetShop.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
-            ViewBag.Title = "LOLLLLLLLLLLlll";
             return View();
         }
 
         public ActionResult Auth()
         {
-            ViewBag.Message = "Your contact page.";
-            ViewBag.Title = "LOLLLLLLLLLLlll";
             return View();
         }
 
-        public ActionResult Admin()
+        public ActionResult Goods()
         {
-            ViewBag.Message = "Your contact page.";
-            ViewBag.Title = "LOLLLLLLLLLLlll";
+            string password = Request.Form["password"];
+            string login = Request.Form["login"];
+            var cookie = new HttpCookie("auth")
+            {
+                Name = "auth",
+                Value = DateTime.Now.ToString("dd.MM.yyyy"),
+                Expires = DateTime.Now.AddDays(30),
+            };
+            if (login == "admin" && password == "12345")
+            {
+                Response.SetCookie(cookie);
+            }
+            if (Request.Cookies["auth"] == null)
+                return Content("Ты сука не одмен!");
             return View();
         }
 
-
+        public ActionResult Orders()
+        {
+            if (Request.Cookies["auth"] == null)
+                return Content("Ты сука не одмен!");
+            return View();
+        }
     }
 }
