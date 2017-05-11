@@ -1,0 +1,27 @@
+﻿@model InternetShop.Models.Good
+@{
+    ViewBag.Title = "Good";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+</br>
+<form method="Post" action="@Url.Action("Success", "Home", new { id = Model.Id })">
+    <p>Название</p>
+    <p>
+        <input name="name" value="@Model.Name">
+    </p>
+    <p>Описание</p>
+    <p>
+        <textarea name="description" cols="40" rows="10">@Model.Description</textarea>
+    </p>
+    <p>Стоимость</p>
+    <p>
+        <input type="number" name="price" value="@Model.Price" min="1" max="1000000" step="1">
+    </p>
+    <p>Количество</p>
+    <p>
+        <input type="number" name="count" value="@Model.Count" min="1" max="100000" step="1">
+    </p>
+    <p>
+        <input type="submit" value="Отправить">
+    </p>
+</form>

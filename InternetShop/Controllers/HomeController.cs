@@ -22,7 +22,7 @@ namespace InternetShop.Controllers
                 Price = 200
             };
             db.Goods.Add(Item);
-          //  db.SaveChanges();
+         //   db.SaveChanges();
             var Items = db.Goods;
             Console.WriteLine(Item.Count);
             return View(Items);
@@ -61,13 +61,53 @@ namespace InternetShop.Controllers
             }
             if (Request.Cookies["auth"] == null)
                 return Content("Ты сука не одмен!");
-            return View();
+
+            var Items = db.Goods;
+            return View(Items);
         }
 
         public ActionResult Orders()
         {
             if (Request.Cookies["auth"] == null)
                 return Content("Ты сука не одмен!");
+            return View();
+        }
+
+        public ActionResult Select(int id)
+        {
+            InternetShop.Models.Good Item = null;
+            if (id == 0)
+            {
+                Item = new InternetShop.Models.Good();
+                db.Goods.Add(Item);
+                db.SaveChanges();
+            }
+            else
+            {
+                Item = db.Goods.FirstOrDefault(x => x.Id == id);
+                if (Item == null)
+                    return Content("hohohoohohohoho!");
+            }
+            return View(Item);
+        }
+
+
+        public ActionResult Success(int id)
+        {
+            var Item = db.Goods.FirstOrDefault(x => x.Id == id);
+            var name = Request.Form["name"];
+            var description = Request.Form["description"];
+            int price = Int32.Parse( Request.Form["price"] );
+            int count = Int32.Parse( Request.Form["count"] );
+            if (name == null || description == null)
+                return Content("post error");
+            if (Item == null)
+                return Content("hohohoohohohoho!");
+            Item.Name = Request.Form["name"];
+            Item.Description = description;
+            Item.Price = price;
+            Item.Count = count;
+            db.SaveChanges();
             return View();
         }
     }

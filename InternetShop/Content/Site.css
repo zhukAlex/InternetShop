@@ -28,3 +28,33 @@ textarea {
     margin-top: 50px;
 }
 
+#liniya {
+    margin-top: 10px;
+    width: 200px;
+    float: left;
+    margin-left: 15px;
+    text-align: center;
+    position: relative;
+}
+
+#imgGood{
+    height: 50px;
+    width: auto;
+}
+
+#word {
+    height: 10px;
+    width: 200px;
+    word-break: break-all;
+}
+
+#list {
+    list-style-type: none;
+}
+
+
+
+#separ {
+    position: absolute;
+}
+

@@ -9,6 +9,7 @@
     <Property Name="Price" Type="Int32" Nullable="false" />
     <Property Name="Count" Type="Int32" Nullable="false" />
     <Property Name="Image" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
   </EntityType>
   <EntityType Name="OrderedGood">
     <Key>

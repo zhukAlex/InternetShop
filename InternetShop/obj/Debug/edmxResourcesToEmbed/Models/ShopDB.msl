@@ -4,6 +4,7 @@
     <EntitySetMapping Name="Goods">
       <EntityTypeMapping TypeName="ShopModel.Good">
         <MappingFragment StoreEntitySet="Goods">
+          <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="Price" ColumnName="Price" />

@@ -9,6 +9,7 @@
     <Property Name="Price" Type="int" Nullable="false" />
     <Property Name="Count" Type="int" Nullable="false" />
     <Property Name="Image" Type="nchar" MaxLength="1000" />
+    <Property Name="Name" Type="nchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="OrderedGoods">
     <Key>
