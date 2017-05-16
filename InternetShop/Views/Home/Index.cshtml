@@ -12,6 +12,12 @@
         height:300px;
         margin-left:20px;
     }
+
+    #bottom{
+        bottom: 15px;
+        position: absolute;
+        right: 5px;
+    }
     
 </style>
 <br />
@@ -22,9 +28,11 @@
             <img src="@item.Image">
             <h3>
                 <strong>@item.Name</strong>
-                <span class="pull-right label label-primary">@item.Price.ToString("# руб")</span>
             </h3>
             <span class="lead">@item.Description</span>
+            <h3>
+                <span class="pull-right label label-primary" id="bottom" >@item.Price.ToString("# руб")</span>
+            </h3>
         </div>
     </a>
 }

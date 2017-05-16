@@ -30,7 +30,7 @@ textarea {
 
 #liniya {
     margin-top: 10px;
-    width: 200px;
+    width: 250px;
     float: left;
     margin-left: 15px;
     text-align: center;
@@ -44,7 +44,7 @@ textarea {
 
 #word {
     height: 10px;
-    width: 200px;
+    width: 250px;
     word-break: break-all;
 }
 
