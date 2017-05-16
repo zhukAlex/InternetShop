@@ -4,24 +4,27 @@
     int i = 0;
     int len = 0;
 }
-
+<style>
+    #test {
+        position: relative;
+        float:left;
+        width:200px;
+        height:300px;
+        margin-left:20px;
+    }
+    
+</style>
+<br />
 @foreach (var item in Model)
 {
     <a href="@Url.Action("Select", "Home", new { id = item.Id })">
-        <div id="liniya">
-            <p><img id="imgGood" src="@item.Image"></p>
-            <p>Название товара:</p><p> @item.Name</p>
-            @{
-                len = @item.Description.Length;
-            }
-            Описание: <p id="word">@item.Description.Substring(0, 20 > len ? len : 20)</p>
-            <p>Количество: @item.Count</p>
-            <p>Стоимость: @item.Price</p>
+        <div class="well" id="test">
+            <img src="@item.Image">
+            <h3>
+                <strong>@item.Name</strong>
+                <span class="pull-right label label-primary">@item.Price.ToString("# руб")</span>
+            </h3>
+            <span class="lead">@item.Description</span>
         </div>
     </a>
-                i++;
-                if (i % 3 == 0)
-                {
-                    <div id="separ"></div>
-                }
 }

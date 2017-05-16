@@ -17,5 +17,6 @@ namespace InternetShop.Models
         public int Id { get; set; }
         public int IdGood { get; set; }
         public int Count { get; set; }
+        public int IdOrder { get; set; }
     }
 }

@@ -23,6 +23,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdGood" Type="int" Nullable="false" />
           <Property Name="Count" Type="int" Nullable="false" />
+          <Property Name="IdOrder" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Orders">
           <Key>
@@ -33,7 +34,7 @@
           <Property Name="Telephone" Type="nchar" MaxLength="13" Nullable="false" />
           <Property Name="Address" Type="nchar" MaxLength="50" Nullable="false" />
           <Property Name="Sum" Type="int" Nullable="false" />
-          <Property Name="Status" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
         </EntityType>
         <EntityContainer Name="Хранилище ShopModelContainer">
           <EntitySet Name="Goods" EntityType="Self.Goods" Schema="dbo" store:Type="Tables" />
@@ -62,6 +63,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IdGood" Type="Int32" Nullable="false" />
           <Property Name="Count" Type="Int32" Nullable="false" />
+          <Property Name="IdOrder" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
@@ -72,7 +74,7 @@
           <Property Name="Telephone" Type="String" MaxLength="13" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="Address" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="Sum" Type="Int32" Nullable="false" />
-          <Property Name="Status" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityContainer Name="ShopEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Goods" EntityType="Self.Good" />
@@ -100,6 +102,7 @@
           <EntitySetMapping Name="OrderedGoods">
             <EntityTypeMapping TypeName="ShopModel.OrderedGood">
               <MappingFragment StoreEntitySet="OrderedGoods">
+                <ScalarProperty Name="IdOrder" ColumnName="IdOrder" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="IdGood" ColumnName="IdGood" />
                 <ScalarProperty Name="Count" ColumnName="Count" />

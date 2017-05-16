@@ -19,6 +19,6 @@ namespace InternetShop.Models
         public string Telephone { get; set; }
         public string Address { get; set; }
         public int Sum { get; set; }
-        public string Status { get; set; }
+        public int Status { get; set; }
     }
 }

@@ -16,6 +16,7 @@
     <EntitySetMapping Name="OrderedGoods">
       <EntityTypeMapping TypeName="ShopModel.OrderedGood">
         <MappingFragment StoreEntitySet="OrderedGoods">
+          <ScalarProperty Name="IdOrder" ColumnName="IdOrder" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="IdGood" ColumnName="IdGood" />
           <ScalarProperty Name="Count" ColumnName="Count" />

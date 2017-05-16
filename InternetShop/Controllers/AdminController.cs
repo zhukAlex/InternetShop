@@ -30,7 +30,7 @@ namespace InternetShop.Controllers
                 Response.SetCookie(cookie);
             }
             if (Request.Cookies["auth"] == null)
-                return Content("Ты сука не одмен!");
+                return Content("Ты не одмен!");
 
             var Items = db.Goods;
             return View(Items);
@@ -39,8 +39,11 @@ namespace InternetShop.Controllers
         public ActionResult Orders()
         {
             if (Request.Cookies["auth"] == null)
-                return Content("Ты сука не одмен!");
-            return View();
+                return Content("Ты не одмен!");
+
+            var orders = db.Orders;
+            var orderedGoods = db.OrderedGoods;
+            return View(orders);
         }
 
         public ActionResult Select(int id)

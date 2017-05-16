@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<InternetShop.Models.Order>
 @{
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
@@ -12,6 +12,11 @@
 </head>
 <body>
     <div> 
+        @foreach(var item in Model)
+        {
+            <a href="">@item.FIO, @item.Address, @item.Telephone, @item.Sum, @item.Status</a><br/>
+        }
     </div>
 </body>
 </html>
+

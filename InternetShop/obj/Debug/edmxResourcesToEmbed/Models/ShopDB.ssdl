@@ -18,6 +18,7 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="IdGood" Type="int" Nullable="false" />
     <Property Name="Count" Type="int" Nullable="false" />
+    <Property Name="IdOrder" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Orders">
     <Key>
@@ -28,7 +29,7 @@
     <Property Name="Telephone" Type="nchar" MaxLength="13" Nullable="false" />
     <Property Name="Address" Type="nchar" MaxLength="50" Nullable="false" />
     <Property Name="Sum" Type="int" Nullable="false" />
-    <Property Name="Status" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
   </EntityType>
   <EntityContainer Name="Хранилище ShopModelContainer">
     <EntitySet Name="Goods" EntityType="Self.Goods" Schema="dbo" store:Type="Tables" />
