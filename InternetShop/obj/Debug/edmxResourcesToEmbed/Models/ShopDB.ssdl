@@ -5,7 +5,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Description" Type="nchar" MaxLength="500" Nullable="false" />
+    <Property Name="Description" Type="nchar" MaxLength="500" />
     <Property Name="Price" Type="int" Nullable="false" />
     <Property Name="Count" Type="int" Nullable="false" />
     <Property Name="Image" Type="nchar" MaxLength="1000" />

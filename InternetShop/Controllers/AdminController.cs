@@ -30,7 +30,7 @@ namespace InternetShop.Controllers
                 Response.SetCookie(cookie);
             }
             if (Request.Cookies["auth"] == null)
-                return Content("Ты не одмен!");
+                return Content("Вы не админ!");
 
             var Items = db.Goods;
             return View(Items);
@@ -39,7 +39,7 @@ namespace InternetShop.Controllers
         public ActionResult Orders()
         {
             if (Request.Cookies["auth"] == null)
-                return Content("Ты не одмен!");
+                return Content("Вы не админ!");
 
             var orders = db.Orders;
             var orderedGoods = db.OrderedGoods;
@@ -52,6 +52,7 @@ namespace InternetShop.Controllers
             if (id == 0)
             {
                 Item = new InternetShop.Models.Good();
+
                 db.Goods.Add(Item);
                 db.SaveChanges();
             }
@@ -59,7 +60,7 @@ namespace InternetShop.Controllers
             {
                 Item = db.Goods.FirstOrDefault(x => x.Id == id);
                 if (Item == null)
-                    return Content("hohohoohohohoho!");
+                    return Content("Ошибка!");
             }
             return View(Item);
         }
@@ -75,7 +76,7 @@ namespace InternetShop.Controllers
             if (name == null || description == null)
                 return Content("post error");
             if (Item == null)
-                return Content("hohohoohohohoho!");
+                return Content("Ошибка!");
             Item.Name = Request.Form["name"];
             Item.Description = description;
             Item.Price = price;

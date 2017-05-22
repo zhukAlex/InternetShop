@@ -18,7 +18,7 @@ namespace InternetShop.Models
         public string Description { get; set; }
         public int Price { get; set; }
         public int Count { get; set; }
-        public string Image { get; set; } = "/img/good.png";
+        public string Image { get; set; }
         public string Name { get; set; }
     }
 }

@@ -10,7 +10,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Description" Type="nchar" MaxLength="500" Nullable="false" />
+          <Property Name="Description" Type="nchar" MaxLength="500" />
           <Property Name="Price" Type="int" Nullable="false" />
           <Property Name="Count" Type="int" Nullable="false" />
           <Property Name="Image" Type="nchar" MaxLength="1000" />
@@ -50,7 +50,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Description" Type="String" MaxLength="500" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="true" Unicode="true" />
           <Property Name="Price" Type="Int32" Nullable="false" />
           <Property Name="Count" Type="Int32" Nullable="false" />
           <Property Name="Image" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" />

@@ -10,6 +10,7 @@ namespace InternetShop.Controllers
     {
         private Models.ShopEntities db = new Models.ShopEntities();
         private bool auth = false;
+
         public ActionResult Index()
         {
             var cookie = new HttpCookie("auth");
@@ -42,7 +43,7 @@ namespace InternetShop.Controllers
             {
                 Item = db.Goods.FirstOrDefault(x => x.Id == id);
                 if (Item == null)
-                    return Content("hohohoohohohoho!");
+                    return Content("Ошибка!");
             }
             return View(Item);
         }

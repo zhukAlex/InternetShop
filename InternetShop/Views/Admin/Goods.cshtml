@@ -22,7 +22,7 @@
             @{
                 len = @item.Description.Length;
             }
-            Описание: <p id="word">@item.Description.Substring(0, 20 > len ? len : 20)</p>
+            Описание: <p id="word">@item.Description.Substring(0, 10 > len ? len : 10)</p>
             <p>Количество: @item.Count</p>
             <p>Стоимость: @item.Price</p>
         </div>
