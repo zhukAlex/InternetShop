@@ -73,13 +73,17 @@ namespace InternetShop.Controllers
             var description = Request.Form["description"];
             int price = Int32.Parse(Request.Form["price"]);
             int count = Int32.Parse(Request.Form["count"]);
+            String img = Request.Form["photo"];
             if (name == null || description == null)
                 return Content("post error");
             if (Item == null)
                 return Content("Ошибка!");
+            if (img == null)
+                return Content("post error");
             Item.Name = Request.Form["name"];
             Item.Description = description;
             Item.Price = price;
+            Item.Image = "/img/" + img;
             Item.Count = count;
             db.SaveChanges();
             return View();

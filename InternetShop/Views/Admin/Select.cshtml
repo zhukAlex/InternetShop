@@ -5,6 +5,10 @@
 }
 </br>
 <form method="Post" action="@Url.Action("Success", "Admin", new { id = Model.Id })">
+    <p>Изображение</p>
+    <p> 
+        <input type="file" name="photo" multiple accept="image/*,image/jpeg">
+    </p>
     <p>Название</p>
     <p>
         <input name="name" value="@Model.Name">
